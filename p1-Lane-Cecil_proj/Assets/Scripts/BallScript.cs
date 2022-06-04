@@ -22,9 +22,9 @@ public class BallScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 targetPosition = anchor.transform.TransformPoint(new Vector3(0, -2, 0));
+        Vector3 targetPosition = anchor.transform.TransformPoint(new Vector3(0, 0, 0));
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
