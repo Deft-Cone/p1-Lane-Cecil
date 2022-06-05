@@ -13,8 +13,8 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (effectsOn.VFX)
-        // {
+        if (effectsOn.VFX)
+        {
             if (clockwiseRotation == false)
             {
                 rotateDirection += Time.deltaTime * rotationSpeed;
@@ -25,6 +25,6 @@ public class Rotation : MonoBehaviour
             }
 
             transform.rotation = Quaternion.Euler(0, 0, rotateDirection);
-        // }
+        }
     }
 }
