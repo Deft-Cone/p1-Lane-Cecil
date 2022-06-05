@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8758425056767411414
 Transform:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
   rotateDirection: 0
   rotationSpeed: 200
   clockwiseRotation: 1
-  effectsOn: {fileID: 0}
+  effectsOn: {fileID: 7607099160748759463, guid: f6bbb8504f7cf4cf48a463d3e07d76d5, type: 3}
 --- !u!114 &-7300798539332726900
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,10 +9,15 @@ public class BallScript : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float smoothTime;
     [SerializeField] private Vector3 velocity = Vector3.zero;
+    [SerializeField] private TimeStop timeStop;
+    [SerializeField] float hitChangeTime = 0.05f;
+    [SerializeField] int hitRestoreSpeed = 10;
+    [SerializeField] float hitDelay = 0.1f;
 
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        timeStop = GetComponent<TimeStop>();
         anchor = GameObject.Find("Anchor");
     }
     // Start is called before the first frame update
@@ -31,6 +36,14 @@ public class BallScript : MonoBehaviour
     private void LateUpdate()
     {
         DrawRope();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<Rotation>())
+        {
+            timeStop.StopTime(hitChangeTime, hitRestoreSpeed, hitDelay);
+        }
     }
 
     void DrawRope()
