@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
+    [SerializeField] private bool freezeTimeActive = true;
     private GameObject gm;
     private AudioManager am;
     [SerializeField] private Vector2 ballVelocity;
@@ -17,6 +18,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] float hitChangeTime = 0.05f;
     [SerializeField] int hitRestoreSpeed = 10;
     [SerializeField] float hitDelay = 0.1f;
+    [SerializeField] private bool isSpinning;
 
     private void Awake()
     {
@@ -40,8 +42,23 @@ public class BallScript : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
         ballVelocity = rb.velocity;
-    }
 
+        if(ballVelocity.magnitude <= 1)
+        {
+            isSpinning = true;
+        }
+        else
+        {
+            isSpinning = false;
+        }
+    }
+    private void Update()
+    {
+        if(isSpinning)
+        {
+            am.Play("Woosh");
+        }
+    }
     private void LateUpdate()
     {
         DrawRope();
@@ -51,7 +68,11 @@ public class BallScript : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<Rotation>())
         {
-            timeStop.StopTime(hitChangeTime, hitRestoreSpeed, hitDelay);
+            if (freezeTimeActive)
+            {
+                timeStop.StopTime(hitChangeTime, hitRestoreSpeed, hitDelay);
+            }
+            
         }
 
         if (collision.gameObject.CompareTag("Square"))

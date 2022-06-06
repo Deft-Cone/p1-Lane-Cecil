@@ -227,8 +227,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1298795594}
   - {fileID: 2064565164}
+  - {fileID: 1298795594}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -612,6 +612,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380036410}
   m_CullTransparentMesh: 1
+--- !u!1 &421748727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6899921065877362200, guid: 6ebe927c910194ecb8997fa47755f786, type: 3}
+  m_PrefabInstance: {fileID: 1809655235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &421748734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421748727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92cb4aa68fdff94d922bd1bb5ca49a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  stoppingDistance: 0
+--- !u!1 &444174783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8127721185069582360, guid: d7f07b55ecd614cb69957f69490659fc, type: 3}
+  m_PrefabInstance: {fileID: 2062404848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &444174790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444174783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92cb4aa68fdff94d922bd1bb5ca49a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  stoppingDistance: 0
 --- !u!1001 &475283811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,7 +1012,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.6384177, b: 0.53333336, a: 1}
   m_FlipX: 0
@@ -1317,16 +1355,28 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Woosh
+    clip: {fileID: 8300000, guid: f2f05b5bd42a8bf45a3c90343fbc3e80, type: 3}
+    volume: 1
+    pitch: 3
+    loop: 1
+    source: {fileID: 0}
+  - name: Hit_1
+    clip: {fileID: 8300000, guid: af74a7b9cb41d6e48a5fbea18c60c5ca, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Hit_2
+    clip: {fileID: 8300000, guid: a23dcc6e6c9c75f47bb003f22b074c1b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit_3
+    clip: {fileID: 8300000, guid: bd2d83caf1ccd1947844445aa4abd486, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!1 &1161136690
@@ -1545,7 +1595,7 @@ GameObject:
   - component: {fileID: 1298795601}
   m_Layer: 2
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1563,7 +1613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 89712294}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1298795595
 LineRenderer:
@@ -1605,7 +1655,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -1754,7 +1804,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.38039216, b: 0.21960784, a: 1}
   m_FlipX: 0
@@ -1778,17 +1828,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ef5445559636e47afc3084699b70c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freezeTimeActive: 0
   ballVelocity: {x: 0, y: 0}
-  lr: {fileID: 0}
-  rb: {fileID: 0}
-  anchor: {fileID: 0}
-  target: {fileID: 0}
   smoothTime: 0.6
   velocity: {x: 0, y: 0, z: 0}
   timeStop: {fileID: 0}
   hitChangeTime: 0.05
   hitRestoreSpeed: 10
   hitDelay: 0.001
+  isSpinning: 0
 --- !u!96 &1298795601
 TrailRenderer:
   serializedVersion: 2
@@ -1830,7 +1878,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
@@ -2887,7 +2935,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 89712294}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2064565165
 Rigidbody2D:

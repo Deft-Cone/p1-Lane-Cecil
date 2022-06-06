@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TimeStop : MonoBehaviour
 {
+    
     [SerializeField] private float speed;
     [SerializeField] private bool restoreTime;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class TimeStop : MonoBehaviour
     {
         if (restoreTime)
         {
-            if(Time.timeScale< 1f)
+            if (Time.timeScale < 1f)
             {
                 Time.timeScale += Time.deltaTime * speed;
             }
