@@ -21,6 +21,12 @@ public class AnchorDrag : MonoBehaviour
     void OnMouseDown()
     {
         dragOffset = transform.position - GetMousePos();
+        //Cursor.visible = false;
+    }
+
+    private void OnMouseUp()
+    {
+        //Cursor.visible = true;
     }
 
     void OnMouseDrag()

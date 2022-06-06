@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.3820755, g: 0.90711236, b: 1, a: 1}
+  m_Color: {r: 0.4745098, g: 0.7411765, b: 0.56078434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   rotateDirection: 0
   rotationSpeed: 100
   clockwiseRotation: 0
-  effectsOn: {fileID: 7607099160748759463, guid: f6bbb8504f7cf4cf48a463d3e07d76d5, type: 3}
+  effectsOn: {fileID: 0}
 --- !u!114 &-3716296009464685801
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    [SerializeField] private LineRenderer lr;
-    [SerializeField] private GameObject anchor;
-    [SerializeField] private Transform target;
+    private GameObject gm;
+    private AudioManager am;
+    [SerializeField] private Vector2 ballVelocity;
+    private LineRenderer lr;
+    private Rigidbody2D rb;
+    private GameObject anchor;
+    private Transform target;
     [SerializeField] private float smoothTime;
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private TimeStop timeStop;
@@ -16,7 +20,10 @@ public class BallScript : MonoBehaviour
 
     private void Awake()
     {
+        gm = GameObject.Find("Game Manager");
+        am = gm.GetComponent<AudioManager>();
         lr = GetComponent<LineRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         timeStop = GetComponent<TimeStop>();
         anchor = GameObject.Find("Anchor");
     }
@@ -31,6 +38,8 @@ public class BallScript : MonoBehaviour
     {
         Vector3 targetPosition = anchor.transform.TransformPoint(new Vector3(0, 0, 0));
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+
+        ballVelocity = rb.velocity;
     }
 
     private void LateUpdate()
@@ -43,6 +52,19 @@ public class BallScript : MonoBehaviour
         if(collision.gameObject.GetComponent<Rotation>())
         {
             timeStop.StopTime(hitChangeTime, hitRestoreSpeed, hitDelay);
+        }
+
+        if (collision.gameObject.CompareTag("Square"))
+        {
+            am.Play("Hit_1");
+        }
+        if (collision.gameObject.CompareTag("Diamond"))
+        {
+            am.Play("Hit_2");
+        }
+        if (collision.gameObject.CompareTag("Pill"))
+        {
+            am.Play("Hit_3");
         }
     }
 
