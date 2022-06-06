@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.VFX;
 using UnityEngine;
 
 public class BallScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] private Vector2 ballVelocity;
     private LineRenderer lr;
     private Rigidbody2D rb;
+    private VisualEffect hitVFX;
     private GameObject anchor;
     private Transform target;
     [SerializeField] private float smoothTime;
@@ -26,6 +28,7 @@ public class BallScript : MonoBehaviour
         am = gm.GetComponent<AudioManager>();
         lr = GetComponent<LineRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        hitVFX = GetComponent<VisualEffect>();
         timeStop = GetComponent<TimeStop>();
         anchor = GameObject.Find("Anchor");
     }
@@ -68,6 +71,7 @@ public class BallScript : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<Rotation>())
         {
+            StartCoroutine("impact");
             if (freezeTimeActive)
             {
                 timeStop.StopTime(hitChangeTime, hitRestoreSpeed, hitDelay);
@@ -87,6 +91,12 @@ public class BallScript : MonoBehaviour
         {
             am.Play("Hit_3");
         }
+    }
+
+    private IEnumerator impact()
+    {
+        hitVFX.Play();
+        yield return new WaitForSeconds(0.1f);
     }
 
     void DrawRope()

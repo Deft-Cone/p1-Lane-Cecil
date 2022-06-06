@@ -8,11 +8,17 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private int collectablesToSpawn = 99;
     [SerializeField] private float timeToNextSpawn = 1f;
     public GameObject quad;
+    private ObjectPooler obpool;
 
+    private void Awake()
+    {
+        obpool = GameObject.Find("ObjectPooler").GetComponent<ObjectPooler>();
+    }
     private void Start()
     {
         StartCoroutine("SpawnCollectables");
     }
+
     public IEnumerator SpawnCollectables()
     {
         int randomItemType = 0;
@@ -34,6 +40,7 @@ public class ItemSpawner : MonoBehaviour
             pos = new Vector2(screenX, screenY);
 
             Instantiate(itemToSpawn, pos, transform.rotation);
+            //GameObject nextToSpawn = 
             collectablesToSpawn--;
             yield return new WaitForSeconds(timeToNextSpawn);
         }

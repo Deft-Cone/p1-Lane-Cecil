@@ -8,8 +8,12 @@ public class Rotation : MonoBehaviour
     public float rotateDirection;
     public float rotationSpeed;
     public bool clockwiseRotation;
-    public Menu effectsOn; 
+    public Menu effectsOn;
 
+    private void Awake()
+    {
+        effectsOn = GameObject.Find("Canvas").GetComponent<Menu>();
+    }
     // Update is called once per frame
     void Update()
     {
