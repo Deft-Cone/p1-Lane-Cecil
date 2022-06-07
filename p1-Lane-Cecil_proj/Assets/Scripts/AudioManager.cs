@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
+    
 
     public void ChangeVolume()
     {
@@ -44,6 +45,10 @@ public class AudioManager : MonoBehaviour
         if (effectsOn.VFX)
         {
             s.source.Play(); 
+        }
+        else
+        {
+            Play("Game Music"); 
         }
     }
 

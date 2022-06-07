@@ -8,8 +8,9 @@ public class Menu : MonoBehaviour
 {
     public GameObject pauseMenuScreen;
     public bool VFX = false; 
-    public GameObject scoreText;
-    public WallObjectCollide points;
+    //public GameObject scoreText;
+    //public WallObjectCollide points;
+    public GameObject collisionCam;
     public void ReturnToMenu ()
     {
         SceneManager.LoadScene("Start Scene");
@@ -25,9 +26,11 @@ public class Menu : MonoBehaviour
         if (VFX)
         {
             VFX = false;
+            collisionCam.SetActive(false);
         }
         else
         {
+            collisionCam.SetActive(true);
             VFX = true; 
         }
     }
@@ -45,7 +48,7 @@ public class Menu : MonoBehaviour
     
     void Update()
     {
-        scoreText.GetComponent<Text>().text = points.score.ToString();
+        //scoreText.GetComponent<Text>().text = points.score.ToString();
         //scoreText.text = points.score.ToString();
     }
 }
