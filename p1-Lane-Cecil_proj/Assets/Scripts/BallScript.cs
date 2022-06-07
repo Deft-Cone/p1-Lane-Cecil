@@ -96,8 +96,8 @@ public class BallScript : MonoBehaviour
 
     private IEnumerator impact()
     {
-        if (effectsOn.VFX)
-        {
+        
+        if (effectsOn.VFX) {
             hitVFX.Play();
             yield return new WaitForSeconds(0.1f);
         }

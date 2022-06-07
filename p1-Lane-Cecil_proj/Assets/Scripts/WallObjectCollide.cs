@@ -14,9 +14,8 @@ public class WallObjectCollide : MonoBehaviour
             itemType.gameObject.CompareTag("Diamond") ||
             itemType.gameObject.CompareTag("Pill"))
         {
-            Debug.Log("hit a wall");
+            //Debug.Log("hit a wall");
             itemType.gameObject.SetActive(false);
-            score++;
         }
     }
 }

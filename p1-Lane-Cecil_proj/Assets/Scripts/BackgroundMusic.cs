@@ -3,13 +3,12 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour
+public class BackgroundMusic : MonoBehaviour
 {
     public float masterVolume;
     [SerializeField] AudioListener al;
     [SerializeField] Slider volumeSlider;
     public Sound[] sounds;
-    public Menu effectsOn;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,14 +38,9 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Sound: " + name + " not found.");
             return;
-
         }
-
-        if (effectsOn.VFX || name == "Game Music")
-        {
-            s.source.Play(); 
-        }
-
+        s.source.Play(); 
+        
     }
 
     public void Stop(string name)

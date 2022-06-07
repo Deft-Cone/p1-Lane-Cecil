@@ -46,10 +46,5 @@ public class Menu : MonoBehaviour
         pauseMenuScreen.SetActive(false);
         Time.timeScale = 1f;
     }
-    
-    void Update()
-    {
-        //scoreText.GetComponent<Text>().text = points.score.ToString();
-        //scoreText.text = points.score.ToString();
-    }
+
 }
