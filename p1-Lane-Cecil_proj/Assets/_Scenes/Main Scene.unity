@@ -857,7 +857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &246082482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7337209, y: 1}
+    m_SensorSize: {x: 1.6704762, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2876,7 +2876,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
 --- !u!2083052967 &1298795605
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -3848,6 +3848,10 @@ PrefabInstance:
     - target: {fileID: 1076463373138845695, guid: 6ebe927c910194ecb8997fa47755f786, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033473747408359530, guid: 6ebe927c910194ecb8997fa47755f786, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6899921065877362200, guid: 6ebe927c910194ecb8997fa47755f786, type: 3}
       propertyPath: m_Name
