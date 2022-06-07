@@ -21,6 +21,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] int hitRestoreSpeed = 10;
     [SerializeField] float hitDelay = 0.1f;
     [SerializeField] private bool isSpinning;
+    public Menu effectsOn;
 
     private void Awake()
     {
@@ -95,8 +96,11 @@ public class BallScript : MonoBehaviour
 
     private IEnumerator impact()
     {
-        hitVFX.Play();
-        yield return new WaitForSeconds(0.1f);
+        if (effectsOn.VFX)
+        {
+            hitVFX.Play();
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     void DrawRope()

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             StartCoroutine("StartMusic");

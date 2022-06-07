@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioListener al;
     [SerializeField] Slider volumeSlider;
     public Sound[] sounds;
+    public Menu effectsOn;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,7 +40,11 @@ public class AudioManager : MonoBehaviour
             return;
 
         }
-        s.source.Play();
+
+        if (effectsOn.VFX)
+        {
+            s.source.Play(); 
+        }
     }
 
     public void Stop(string name)
