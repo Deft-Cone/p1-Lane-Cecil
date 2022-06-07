@@ -21,6 +21,7 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Main Scene");
     }
     
+    
     public void TurnVFXOn ()
     {
         if (VFX)
